@@ -39,20 +39,10 @@ bottomStudent
 
 #Statistical analysis
 dataset.mean()
-#mean age= 22.5
-#sport freq= 1.6 hours per week
-#mean programming level prior to the semester= 2.7
-#mean programming level after the semester= 4.8
-#mean hours studied per day=3.8
 
 #Informations on male and female
 gender_details = dataset.groupby('gender')[['mean_grades','exams_passed','hours_study','age']].mean()
 gender_details.sort_values('hours_study',ascending=False)
-
-# exams_passed  hours_study        age
-#gender                                      
-#Male        2.714286     3.500000  23.000000
-#Female      3.000000     4.083333  21.833333
 
 #Parental level of edu
 mother_lvl_of_edu_details = dataset.groupby('mother_degree')[['mean_grades','exams_passed','hours_study','age']].mean()
@@ -123,7 +113,7 @@ plot14= dataset.groupby('university_bachelor')['university_bachelor'].count().pl
 # MIXED PLOTS 
 
 #PLOT 15: programming level pre/after vs mean grades 
-# ordinare i valori in maniera ASCENDENTE
+#ordered the values 
 dataset.sort_values(by=['mean_grades'], inplace = True)
 dataset.sort_values(by=['mean_grades'], ascending = True, inplace = True)
 dataset.sort_values(by=['mean_grades'], ascending = 1, inplace = True)
